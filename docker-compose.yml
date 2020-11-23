@@ -1,0 +1,27 @@
+version: '3.5'
+
+services:
+
+  # servicio de base de datos
+  message-store-db:
+    # https://hub.docker.com/_/postgres
+    image: postgres:13.0-alpine
+    ports:
+      - "5432"
+    environment:
+      POSTGRES_USER: "demo"
+      POSTGRES_PASSWORD: "p4ssw0rd"
+      POSTGRES_DB: "messagestore"
+    volumes:
+      - ./.init/message-store-db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  # servicio de mensajeria
+  mq-server:
+    # https://hub.docker.com/_/rabbitmq
+    image: rabbitmq:management
+    ports:
+      - "5672"
+      - "15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: "demo"
+      RABBITMQ_DEFAULT_PASS: "p4ssw0rd"

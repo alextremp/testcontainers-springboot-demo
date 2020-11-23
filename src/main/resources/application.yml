@@ -1,0 +1,32 @@
+spring:
+  main:
+    banner-mode: "OFF"
+  profiles:
+    active: dev
+  datasource:
+    url: "jdbc:postgresql://${message-store-db.host}:${message-store-db.port}/messagestore?currentSchema=demo"
+    username: ${message-store-db.username}
+    password: ${message-store-db.password}
+    driver-class-name: org.postgresql.Driver
+  rabbitmq:
+    host: ${mq-server.host}
+    port: ${mq-server.port}
+    username: ${mq-server.username}
+    password: ${mq-server.password}
+
+message-store-db:
+  host: localhost
+  port: 5432
+  username: demo
+  password: p4ssw0rd
+
+mq-server:
+  host: localhost
+  port: 5672
+  username: demo
+  password: p4ssw0rd
+  routing:
+    exchange: demo-exchange
+    message:
+      queue:
+        dispatched: demo.queue.message.dispatched

@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+
+  message-store-db:
+    ports:
+      - "5432:5432"
+
+  mq-server:
+    ports:
+      - "5672:5672"
+      - "15672:15672"
