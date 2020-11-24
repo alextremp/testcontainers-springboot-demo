@@ -34,4 +34,9 @@ public class DockerizedInfrastructure {
     setProperty(SPRING_MESSAGE_STORE_DB_PORT, valueOf(dockerServices.getServicePort(MESSAGE_STORE_DB_SERVICE, MESSAGE_STORE_DB_PORT)));
     setProperty(SPRING_MQ_SERVER_PORT, valueOf(dockerServices.getServicePort(MQ_SERVER_SERVICE, MQ_SERVER_PORT)));
   }
+
+  public void stop() {
+    // Apagamos los servicios dockerizados
+    dockerServices.stop();
+  }
 }

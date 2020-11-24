@@ -14,7 +14,7 @@ import static org.awaitility.Awaitility.await;
 
 @SpringBootTest
 @Sql("/fixtures/message-store-db/clean.sql")
-class ApplicationTest extends AbstractIntegrationTest {
+abstract class ApplicationTestCase {
 
   @Autowired
   private RabbitTemplate rabbitTemplate;
