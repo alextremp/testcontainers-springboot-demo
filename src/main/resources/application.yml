@@ -30,3 +30,9 @@ mq-server:
     message:
       queue:
         dispatched: demo.queue.message.dispatched
+
+logging:
+  level:
+    ROOT: INFO
+    com.github.alextremp: DEBUG
+    org.springframework: DEBUG

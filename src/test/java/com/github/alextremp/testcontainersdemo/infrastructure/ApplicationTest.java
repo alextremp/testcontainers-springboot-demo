@@ -1,18 +1,20 @@
 package com.github.alextremp.testcontainersdemo.infrastructure;
 
 import com.github.alextremp.testcontainersdemo.infrastructure.messagestoredb.repository.mybatis.MessageMapper;
+import com.github.alextremp.testcontainersdemo.infrastructure.testcontainers.DockerizedInfrastructure;
 import org.awaitility.Duration;
 import org.junit.jupiter.api.Test;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.test.context.jdbc.Sql;
 
 import static java.lang.String.format;
 import static org.awaitility.Awaitility.await;
 
-@SpringBootTest
+@SpringBootTest(classes = {DockerizedInfrastructure.class, Application.class})
 @Sql("/fixtures/message-store-db/clean.sql")
 class ApplicationTest {
 
