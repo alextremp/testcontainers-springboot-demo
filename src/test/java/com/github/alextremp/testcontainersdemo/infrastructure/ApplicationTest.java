@@ -14,9 +14,8 @@ import org.springframework.test.context.jdbc.Sql;
 import static java.lang.String.format;
 import static org.awaitility.Awaitility.await;
 
-@SpringBootTest(classes = {DockerizedInfrastructure.class, Application.class})
 @Sql("/fixtures/message-store-db/clean.sql")
-class ApplicationTest {
+class ApplicationTest extends AbstractIntegrationTest {
 
   @Autowired
   private RabbitTemplate rabbitTemplate;
