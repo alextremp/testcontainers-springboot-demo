@@ -4,9 +4,9 @@ Este proyecto es la base del post [Integrando TestContainers en el contexto de S
 
 Como referencia a las pruebas comentadas en el post, se puede consultar los cambios que aplicarían en cada caso en estas PR:
 
-> :confused: _[TestContainers integrados con JUnit](https://github.com/alextremp/testcontainers-springboot-demo/pull/3/files)_
-> :rocket: _[TestContainers singleton gestionados manualmente](https://github.com/alextremp/testcontainers-springboot-demo/pull/2/files)_
-> :heart_eyes: _[TestContainers gestionados por Spring](https://github.com/alextremp/testcontainers-springboot-demo/pull/1/files)_
+> - :confused: _[TestContainers integrados con JUnit](https://github.com/alextremp/testcontainers-springboot-demo/pull/3/files)_
+> - :rocket: _[TestContainers singleton gestionados manualmente](https://github.com/alextremp/testcontainers-springboot-demo/pull/2/files)_
+> - :heart_eyes: _[TestContainers gestionados por Spring](https://github.com/alextremp/testcontainers-springboot-demo/pull/1/files)_
 
 
 La rama master es operativa pero sin TestContainers, por lo que para poder ejecutar los tests debe levantarse las infraestructuras externas con docker compose:
